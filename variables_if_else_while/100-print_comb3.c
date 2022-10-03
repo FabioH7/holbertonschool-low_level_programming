@@ -16,15 +16,15 @@ int main(void)
 	{
 		for (y = 1; y <= 9; y++)
 		{
-			if (x != y)
+			if (x != y && x < y)
 			{
 				putchar(x + '0');
 				putchar(x + '0');
-			}
 			if (x + y != 17)
-			{
+				{
 				putchar(',');
 				putchar(' ');
+				}
 			}
 		}
 	}
