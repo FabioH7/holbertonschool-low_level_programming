@@ -2,15 +2,15 @@
 #include "main.h"
 
 /**
- * main - main func
+ * print_alphabet - main func
  * Return: 0 if successful
  */
 
-int main(void)
+void print_alphabet(void)
 {
-	int i;
+	int letter;
 
-	for (i = 97; i < 123; i++)
-		_putchar(i);
+	for (letter = 'a'; letter <= 'z'; letter++)
+		_putchar(letter);
 	_putchar('\n');
 }
