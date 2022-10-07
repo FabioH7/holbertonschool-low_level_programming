@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main (void)
+int main(void)
 {
 	int num, sum;
 
@@ -10,4 +10,5 @@ void main (void)
 			sum += num;
 	}
 	printf("%d\n", sum);
+	return(0);
 }
