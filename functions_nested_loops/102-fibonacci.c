@@ -14,10 +14,13 @@ int main(void)
 	printf("%d, %d, ", num, num1);
 	for (times = 0; times < 50; times ++)
 	{
-		printf("%d, ", sum);
+		printf("%d", sum);
 		num = num1;
 		num1 = sum;
 		sum = num + num1;
+		if (times == 49)
+			continue;
+		printf(", ");
 	}
 	printf("\n");
 	return (0);
