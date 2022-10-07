@@ -9,16 +9,14 @@ void print_times_table(int n)
 {
 	int x, y, z;
 
-	if (n == 0)
-		_putchar('0');
-	else if (n <= 15 && n > 0)
+	if (n <= 15 && n >= 0)
 	{
 		for (x = 0; x <= n; x++)
 		{
+			_putchar('0');
 			for (y = 0; y <= n; y++)
 			{
 				z = x * y;
-				_putchar('0');
 				if (z >= 100 && z <= 225)
 				{
 					_putchar(',');
@@ -46,5 +44,5 @@ void print_times_table(int n)
 			}
 			_putchar('\n');
 		}
-	} _putchar('\n');
+	}
 }
