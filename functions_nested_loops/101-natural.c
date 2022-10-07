@@ -1,5 +1,8 @@
 #include <stdio.h>
-
+/**
+ * main - main function
+ * Return: returns 0 if succesful
+ */
 int main(void)
 {
 	int num, sum;
@@ -10,5 +13,5 @@ int main(void)
 			sum += num;
 	}
 	printf("%d\n", sum);
-	return(0);
+	return (0);
 }
