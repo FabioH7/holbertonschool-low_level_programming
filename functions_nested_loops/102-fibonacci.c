@@ -5,16 +5,17 @@
  */
 int main(void)
 {
-	int num, sum, times, num1;
-	
+	long int num, sum, num1;
+	int times;
+
 	num1 = 1;
 	num = 0;
 	sum = num + num1;
 
-	printf("%d, %d, ", num, num1);
-	for (times = 0; times < 50; times ++)
+	printf("%ld, %ld, ", num, num1);
+	for (times = 0; times < 50; times++)
 	{
-		printf("%d", sum);
+		printf("%ld", sum);
 		num = num1;
 		num1 = sum;
 		sum = num + num1;
