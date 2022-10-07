@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <unistd.h>
-int main (void)
+/**
+ * main - main function
+ * Return: returns 0 if succesful
+ */
+int main(void)
 {
 	int count;
 
@@ -12,12 +16,12 @@ int main (void)
 			printf("Buzz");
 		else if (count % 3 == 0)
 			printf("Fizz");
-		else 
+		else
 			printf("%d", count);
 		if (count == 100)
 			continue;
 		printf(" ");
 	}
 	printf("\n");
-	return(0);
+	return (0);
 }
