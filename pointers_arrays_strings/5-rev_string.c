@@ -1,17 +1,24 @@
 #include "main.h"
 
 /**
- * _puts - main function
- * @str: param
+ * rev_string - main function
+ * @s: param
  */
-void _puts(char *str)
+void rev_string(char *s)
 {
 	int i = 0;
+	int len;
+	char tmp;
 
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
-		_putchar(str[i]);
 		i++;
 	}
-	_putchar ('\n');
+	len = i;
+	for (i = 0; i <= len / 2; i++)
+	{
+		tmp = s[i];
+		s[i] = s[len - i - 1];
+		s[len - i - 1] = tmp;
+	}
 }
