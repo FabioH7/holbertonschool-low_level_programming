@@ -4,7 +4,7 @@
  * _strncat - main function
  * @dest: param
  * @src: param
- * @c: param
+ * @n: param
  * Return: dest
  */
 
