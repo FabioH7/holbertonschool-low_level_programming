@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * _strcat - main function
+ * _strncat - main function
  * @dest: param
  * @src: param
+ * @c: param
  * Return: dest
  */
 
