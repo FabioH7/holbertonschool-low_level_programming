@@ -12,7 +12,7 @@ char *_strchr(char *s, char c)
 {
 	char *pnt;
 	unsigned int i;
-	
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == c)
@@ -24,8 +24,8 @@ char *_strchr(char *s, char c)
 	if (s[i] == c)
 	{
 		pnt = &s[i];
-		return(pnt);
+		return (pnt);
 	}
-	else 
-		return('\0');
+	else
+		return ('\0');
 }
