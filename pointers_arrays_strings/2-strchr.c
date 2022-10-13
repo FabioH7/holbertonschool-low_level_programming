@@ -10,11 +10,9 @@
 
 char *_strchr(char *s, char c)
 {
-	char *pnt;
+	char *pnt, *p;
 	unsigned int i;
 	
-	if (c == '0')
-		return (NULL);
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == c)
@@ -23,5 +21,6 @@ char *_strchr(char *s, char c)
 			return (pnt);
 		}
 	}
-	return (NULL);
+	p = &c;
+	return (p);
 }
