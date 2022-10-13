@@ -10,7 +10,7 @@
 
 char *_strchr(char *s, char c)
 {
-	char *pnt, *p;
+	char *pnt;
 	unsigned int i;
 	
 	for (i = 0; s[i] != '\0'; i++)
@@ -21,6 +21,11 @@ char *_strchr(char *s, char c)
 			return (pnt);
 		}
 	}
-	p = &c;
-	return (p);
+	if (s[i] == c)
+	{
+		pnt = &s[i];
+		return(pnt);
+	}
+	else 
+		return('\0');
 }
