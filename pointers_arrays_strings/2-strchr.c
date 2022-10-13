@@ -21,5 +21,5 @@ char *_strchr(char *s, char c)
 			return (pnt);
 		}
 	}
-	return ('\0');
+	return NULL;
 }
