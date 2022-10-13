@@ -13,13 +13,15 @@ char *_strchr(char *s, char c)
 	char *pnt;
 	unsigned int i;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; *s; i++)
 	{
-		if (s[i] == c)
+		if (s[i] == c && c != '\0')
 		{
 			pnt = &s[i];
 			return (pnt);
 		}
+		else 
+			return ("\0");
 	}
 	return (NULL);
 }
