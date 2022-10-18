@@ -8,15 +8,9 @@
  * Return: dest
  */
 
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_memset(char *s, char b, unsigned int n)
 {
-	char *pnt = dest;
-	unsigned int i, j;
-
-	for (i = 0; dest[i] != '\0'; i++)
-	{
-		for (j = 0; j < n; j++)
-			pnt[i] = src[j];
-	}
-	return (dest);
+	if (s[n] == b)
+		n++;
+	return (s);
 }
