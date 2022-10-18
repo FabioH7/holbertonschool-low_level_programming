@@ -7,6 +7,7 @@ int sqrt_nrm(int x, int n);
  * @n: param
  * Return: strlen value
  */
+
 int _sqrt_recursion(int n)
 {
 	int root = 0;
@@ -14,6 +15,12 @@ int _sqrt_recursion(int n)
 	return (sqrt_nrm(root, n));
 }
 
+/**
+ * sqrt_nrm - second function
+ * @root: param
+ * @n: second param
+ * Return: root
+ */
 int sqrt_nrm(int root, int n)
 {
 	if (root * root == n)
