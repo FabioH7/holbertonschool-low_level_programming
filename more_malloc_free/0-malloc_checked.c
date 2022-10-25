@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <limits.h>
 
+/**
+ * malloc_checked - allocate memory using malloc
+ * @b: parameter
+ * Return: ptr
+ */
 void *malloc_checked(unsigned int b)
 {
 	char *ptr;
