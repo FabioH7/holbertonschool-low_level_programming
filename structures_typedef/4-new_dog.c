@@ -2,8 +2,11 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
- * print_dog - initialise function
- * @d: struct
+ * new_dog - initialise function
+ * @name: struct
+ * @age: dog age
+ * @owner: dog owner name
+ * Return: pointer
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
