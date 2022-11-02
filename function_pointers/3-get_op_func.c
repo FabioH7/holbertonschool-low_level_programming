@@ -20,11 +20,6 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i = 0;
 	
-	if (strlen(s) > 1)
-	{
-		puts("Error");
-		exit(99);
-	}
 	while (ops[i].op != NULL)
 	{
 		if (*s == *ops[i].op)
