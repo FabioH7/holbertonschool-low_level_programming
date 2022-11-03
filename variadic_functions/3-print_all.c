@@ -68,10 +68,9 @@ void print_all(const char * const format, ...)
 				print_float(va_arg(va, double));
 				break;
 		}
-		if (format[i] == 'c' || format[i] == 's' || format[i] == 'i'
-		|| format[i] == 'f')
+		if ((format[i] == 'c' || format[i] == 's' || format[i] == 'i'
+		|| format[i] == 'f') && format[i + 1] != '\0')
 		{
-			if (format[i + 1] != '\0')
 				printf(", ");
 		}
 		i++;
