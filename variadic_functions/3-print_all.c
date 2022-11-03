@@ -51,7 +51,7 @@ void print_all(const char * const format, ...)
 	unsigned int i = 0;
 
 	va_start(va, format);
-	while (format[i] != '\0')
+	while (format != NULL && format[i] != '\0')
 	{
 		switch (format[i])
 		{
@@ -66,6 +66,8 @@ void print_all(const char * const format, ...)
 				break;
 			case 'f':
 				print_float(va_arg(va, double));
+				break;
+			default:
 				break;
 		}
 		if ((format[i] == 'c' || format[i] == 's' || format[i] == 'i'

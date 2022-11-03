@@ -1,5 +1,5 @@
 #include "variadic_functions.h"
-
+#include <stddef.h>
 /**
  * main - check the code
  *
@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-    print_all("ceisf", 'B', 3, "stSchool", 3.14);
+    print_all(NULL);
     return (0);
 }
