@@ -3,7 +3,7 @@
 
 /**
  * print_list - print list values
- * @list_t: list value to print
+ * @h: list value to print
  * Return: Number of nodes
  */
 size_t print_list(const list_t *h)
