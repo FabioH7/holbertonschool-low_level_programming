@@ -6,6 +6,7 @@
  * insert_nodeint_at_index - insert node in list
  * @head: first node of list
  * @n: num of node
+ * @idx: where to insert node
  * Return: pointer to node
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
@@ -13,24 +14,23 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *temp, *pnt;
 	unsigned int count = 0;
 
-	if (head == NULL)
-		return (NULL);
-	temp = malloc(sizeof(listint_t));
-	temp->n = n;
-	temp->next = NULL;
 	pnt = *head;
+	temp = malloc(sizeof(listint_t));
+	if (temp == NULL)
+		return (NULL);
+	temp->n = n;
 	if (idx == 0)
 	{
-		temp->next = *head;
+		temp->next = pnt;
 		*head = temp;
-		return (*head);
+		return (temp);
 	}
 	while (count !=  idx - 1)
 	{
-		count++;
-		pnt = pnt->next;
-		if (pnt == NULL)
+		if (pnt == NULL || pnt->next == NULL)
 			return (NULL);
+		pnt = pnt->next;
+		count++;
 	}
 	temp->next = pnt->next;
 	pnt->next = temp;
