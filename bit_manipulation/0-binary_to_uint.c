@@ -9,46 +9,25 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int i = 0, uint = 0, last;
-	unsigned int num;
+	int i = 0, j;
+	unsigned int num = 1, uint = 0;
 
 	if (b == NULL)
 	{
 		return (0);
 	}
-	for (i = 0; b[i] != '\0'; i++)
+	while (b[i] != '\0')
+		i++;
+	for (j = i - 1; j >= 0; j--)
 	{
-		if (b[i] != '0' && b[i] != '1')
+		if (b[j] != '0' && b[j] != '1')
 		{
 			return (0);
 		}
-	}
-	num = atoi(b);
-	i = 0;
-	while (num != 0)
-	{
-		last = num % 10;
-		uint += last * power(2, i);
-		num /= 10;
-		i++;
+		if (b[j] == '1')
+			uint += num;
+		num *= 2;
+
 	}
 	return (uint);
-}
-
-/**
- * power - power of a num
- * @x: int
- * @y: int
- * Return: power
- */
-int power(int x, int y)
-{
-	int i = 0, sum = 1;
-
-	while (i < y)
-	{
-		sum *= x;
-		i++;
-	}
-	return (sum);
 }
