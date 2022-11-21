@@ -10,7 +10,6 @@
 int create_file(const char *filename, char *text_content)
 {
 	int fd, file_w;
-	char *txt;
 
 	if (filename == NULL)
 		return (-1);
@@ -21,9 +20,6 @@ int create_file(const char *filename, char *text_content)
 	}
 	fd = creat(filename, 0600);
 	if (fd == -1)
-		return (-1);
-	txt = malloc(sizeof(char) * strlen(text_content));
-	if (txt == NULL)
 		return (-1);
 	file_w = write(fd, text_content, strlen(text_content));
 	if (file_w == -1)
