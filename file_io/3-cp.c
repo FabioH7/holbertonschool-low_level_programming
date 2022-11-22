@@ -28,7 +28,7 @@ int main (int argc, char *argv[])
         file_from = open(argv[1], O_RDONLY);
         if (file_from == -1)
         {
-                dprintf(STDOUT_FILENO, "Error can't read from file %s\n", argv[1]);
+                dprintf(STDOUT_FILENO, "Error: can't read from file %s\n", argv[1]);
                 exit(98);
         }
         file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -39,6 +39,7 @@ int main (int argc, char *argv[])
         }
         while ((file_read = read(file_from,buff,file_from_size)) > 0)
         {
+		printf("filetest");
                 if (file_read == -1)
                 {
                         dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
