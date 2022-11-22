@@ -20,10 +20,15 @@ int main (int argc, char *argv[])
                 dprintf(2, "Usage: cp file_from file_to\n");
                 exit(97);
         }
+	if (argv[1] == NULL)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
         file_from = open(argv[1], O_RDONLY);
         if (file_from == -1)
         {
-                dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
+               y dprintf(stdout_fileno, "error: can't read from file %s\n", argv[1]);
                 exit(98);
         }
         file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
