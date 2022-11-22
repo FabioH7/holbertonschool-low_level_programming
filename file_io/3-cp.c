@@ -28,7 +28,7 @@ int main (int argc, char *argv[])
         file_from = open(argv[1], O_RDONLY);
         if (file_from == -1)
         {
-                dprintf(STDOUT_FILENO, "Error: can't read from file %s\n", argv[1]);
+                dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
                 exit(98);
         }
         file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -51,12 +51,10 @@ int main (int argc, char *argv[])
                          exit(99);
                 }
 	}
-	if (file_read != open(argv[1], O_RDWR))
-		return (0);
 	if (file_read == -1)
         {
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-                exit(98);
+                exit(0);
         }
         cl1 = close(file_from);
         cl2 = close(file_to);
