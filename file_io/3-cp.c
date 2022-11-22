@@ -13,7 +13,7 @@ int main (int argc, char *argv[])
         char *buff[1024];
         int tmp_file_from = open(argv[1], O_RDWR);
         size_t file_from_size = (size_t)lseek(tmp_file_from,0,SEEK_END);
-        close(tmp_file_from);
+	close(tmp_file_from);
 
         if (argc != 3)
         {
@@ -26,11 +26,16 @@ int main (int argc, char *argv[])
                 dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
                 exit(98);
         }
-        file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+        file_to = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
         if (file_to == -1)
         {
                 dprintf(2, "Error: Can't write to %s\n", argv[2]);
                 exit(99);
+        }
+	if (file_read == -1)
+        {
+                        dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
+                         exit(98);
         }
         while ((file_read = read(file_from,buff,file_from_size)) > 1)
         {       
