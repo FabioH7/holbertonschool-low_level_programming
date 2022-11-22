@@ -25,10 +25,10 @@ int main (int argc, char *argv[])
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-        file_from = open(argv[1], O_RDONLY);
+        file_from = open(argv[1], O_RDONLY | O_WRONLY);
         if (file_from == -1)
         {
-                dprintf(STDOUT_FILENO, "error: can't read from file %s\n", argv[1]);
+                dprintf(STDOUT_FILENO, "Error: can't read from file %s\n", argv[1]);
                 exit(98);
         }
         file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
