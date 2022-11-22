@@ -29,14 +29,14 @@ int main (int argc, char *argv[])
         file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
         if (file_to == -1)
         {
-                dprintf(2, "Error: Can't write to %s\n", argv[2]);
+                dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", argv[2]);
                 exit(99);
         }
         while ((file_read = read(file_from,buff,file_from_size)) > 0)
         {
                 if (file_read == -1)
                 {
-                        dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+                        dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
                          exit(98);
                 }
                 file_write = write(file_to, buff, file_from_size);
@@ -48,7 +48,7 @@ int main (int argc, char *argv[])
 	}
 	if (file_read == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
         cl1 = close(file_from);
