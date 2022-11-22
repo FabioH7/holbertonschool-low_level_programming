@@ -9,7 +9,7 @@
  */
 int main (int argc, char *argv[])
 {
-        int file_from, cl1, cl2, writ, file_to,file_read,file_write;
+        int file_from, cl1, cl2, file_to,file_read,file_write;
         char *buff[1024];
         int tmp_file_from = open(argv[1], O_RDWR);
         size_t file_from_size = (size_t)lseek(tmp_file_from,0,SEEK_END);
@@ -53,8 +53,6 @@ int main (int argc, char *argv[])
 	}
 	if (file_read == -1)
         {
-		if (write(file_read, buff, file_from_size == -1)
-			return (0);
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
                 exit(98);
         }
