@@ -51,6 +51,11 @@ int main (int argc, char *argv[])
                          exit(99);
                 }
 	}
+	if (file_read == -1)
+        {
+		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
+                exit(98);
+        }
         cl1 = close(file_from);
         cl2 = close(file_to);
         if (cl1 == -1)
