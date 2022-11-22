@@ -32,7 +32,7 @@ int main (int argc, char *argv[])
                 dprintf(2, "Error: Can't write to %s\n", argv[2]);
                 exit(99);
         }
-        while ((file_read = read(file_from,buff,file_from_size)) > 1)
+        while ((file_read = read(file_from,buff,file_from_size)) > 0)
         {       
                 file_write = write(file_to, buff, file_from_size);
                 if (file_write == -1)
