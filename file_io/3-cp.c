@@ -9,7 +9,7 @@
  */
 int main (int argc, char *argv[])
 {
-        int file_from, cl1, cl2, file_to,file_read,file_write;
+        int file_from, cl1, cl2, writ, file_to,file_read,file_write;
         char *buff[1024];
         int tmp_file_from = open(argv[1], O_RDWR);
         size_t file_from_size = (size_t)lseek(tmp_file_from,0,SEEK_END);
@@ -31,7 +31,7 @@ int main (int argc, char *argv[])
                 dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
                 exit(98);
         }
-	writ = write(file_from, "smth", 4)
+	writ = write(file_from, "smth", 4);
 	if (writ == -1)
 		return (0);
         file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
