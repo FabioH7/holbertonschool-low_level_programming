@@ -31,6 +31,9 @@ int main (int argc, char *argv[])
                 dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", argv[1]);
                 exit(98);
         }
+	writ = write(file_from, "smth", 4)
+	if (writ == -1)
+		return (0);
         file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
         if (file_to == -1)
         {
