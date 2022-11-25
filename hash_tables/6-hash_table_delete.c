@@ -11,17 +11,22 @@ void hash_table_delete(hash_table_t *ht)
 
 	if (ht == NULL)
 		return;
-	for (i = 0; ht && i < ht->size; i++)
+	for (i = 0; i < ht->size; i++)
 	{
 		p = ht->array[i];
-		while (p)
+		if (p)
 		{
-			p = p->next;
 			temp = ht->array[i];
-			free(temp->key);
-			free(temp->value);
-			free(temp->next);
-			free(temp);
+			while (temp)
+			{
+				p = temp->next;
+				free(temp->key);
+				free(temp->value);
+				free(temp);
+				temp = p;
+			}
 		}
 	}
+	free(ht->array);
+	free(ht);
 }
