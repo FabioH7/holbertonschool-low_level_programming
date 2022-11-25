@@ -2,8 +2,7 @@
 #include <string.h>
 
 /**
- * hash_table_set - create a hash table
- * @value: value
+ * hash_table_get - create a hash table
  * @ht: table
  * @key: string to encrypt
  * Return: index
@@ -17,5 +16,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	idx = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[idx] == NULL)
 		return (NULL);
+	if (ht->array[idx]->key != key)
+	{
+		while (ht->array[idx]->next != NULL)
+			ht->array[idx] = ht->array[idx]->next;
+	}
 	return (ht->array[idx]->value);
 }
