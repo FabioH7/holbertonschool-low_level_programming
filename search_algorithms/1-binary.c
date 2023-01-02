@@ -32,11 +32,11 @@ int binary_search(int *array, size_t size, int value)
 		else
 			left = middle + 1;
 	}
-	if (array[right] == value)
-		return (right);
 	if (array[middle] == value)
 		return (middle);
 	printf("Searching in array: ");
 	printf("%i\n", array[left]);
+	if (array[right] == value)
+		return (right);
 	return (-1);
 }
